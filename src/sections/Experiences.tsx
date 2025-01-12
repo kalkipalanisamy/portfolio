@@ -90,7 +90,7 @@ export default function Experiences() {
               className={`relative border-b border-[#4A6741]/20 last:border-b-0 bg-white transition-all duration-300
                 ${expandedIndex === index ? 'shadow-xl' : 'hover:shadow-xl'}`}
               style={{
-                marginBottom: expandedIndex === index ? '400px' : '0px'
+                marginBottom: expandedIndex === index ? '320px' : '0px'
               }}
             >
               <motion.div

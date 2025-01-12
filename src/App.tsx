@@ -40,7 +40,7 @@ export default function App() {
       {/* Progress Bar */}
       {!isMenuOpen && (
         <motion.div
-          className="fixed top-20 md:top-20 lg:top-20 left-0 right-0 h-1 bg-[#4A6741] z-[997]"
+          className="fixed top-20 left-0 right-0 h-1 bg-[#4A6741] z-[997]"
           style={{
             scaleX: scrollYProgress,
             transformOrigin: "0%",

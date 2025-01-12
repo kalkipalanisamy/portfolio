@@ -88,7 +88,7 @@ export default function Expertise() {
                   >
                     <div className="flex items-center space-x-4">
                       <span className="text-xs text-[#4A6741]/60">{item.id}</span>
-                      <h3 className="text-md md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                      <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -123,7 +123,7 @@ export default function Expertise() {
                           className="w-6 h-6"
                         />
                       )}
-                      <h3 className="text-md md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                      <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -155,7 +155,7 @@ export default function Expertise() {
                         <span className="text-xs text-[#4A6741]/60">
                           {item.id}
                         </span>
-                        <h3 className="text-md md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                        <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                           {item.title}
                         </h3>
                       </div>

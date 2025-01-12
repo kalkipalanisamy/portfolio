@@ -161,21 +161,24 @@ export default function Header({
 }: HeaderProps) {
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
-    setIsMenuOpen(false);
-
-    const section = document.getElementById(sectionId);
+    
+    const section = document.getElementById(sectionId.toLowerCase());
     if (!section) return;
 
-    const container = document.querySelector("main");
-    if (!container) return;
+    // First close the menu
+    setIsMenuOpen(false);
 
-    const headerHeight = 80;
-    const elementPosition = section.offsetTop - headerHeight;
+    // Wait for menu close animation to complete
+    setTimeout(() => {
+      const headerHeight = 80;
+      const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
 
-    container.scrollTo({
-      top: elementPosition,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }, 10); // Delay to match menu close animation
   };
 
   return (
@@ -185,10 +188,10 @@ export default function Header({
           isScrolled && !isMenuOpen ? "bg-white/80 backdrop-blur-sm" : ""
         }`}
       >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "home")}
+            href="#about"
+            onClick={(e) => handleNavClick(e, "about")}
             className={`flex items-center space-x-3 ${
               isMenuOpen ? "text-white" : "text-[#2D3A2A]"
             } transition-colors duration-300`}
@@ -221,9 +224,9 @@ export default function Header({
 
           {/* Mobile Menu Button */}
           <div
-            className={`lg:hidden ${
+            className={`lg:hidden fixed top-4 right-4 ${
               isMenuOpen ? "text-white" : "text-[#2D3A2A]"
-            } transition-colors duration-300`}
+            } transition-colors duration-100`}
           >
             <MenuButton
               isOpen={isMenuOpen}
