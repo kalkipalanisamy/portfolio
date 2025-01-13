@@ -65,7 +65,7 @@ export default function Expertise() {
       >
         <div className="max-w-7xl mx-auto w-full">
           <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-8 md:mb-16 lg:mb-14 text-[#2D3A2A] text-center">
-            What I Offer
+            Passions and Proficiencies
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-4">
             {/* Expertise Section */}
