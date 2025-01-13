@@ -87,8 +87,8 @@ export default function Expertise() {
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex items-center space-x-4">
-                      <span className="text-xs text-[#4A6741]/60">{item.id}</span>
-                      <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                      <span className="text-xs text-[#4A6741]/60 font-number font-medium">{item.id}</span>
+                      <h3 className="text-md md:text-sm lg:text-md pt-1 font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -152,10 +152,10 @@ export default function Expertise() {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <span className="text-xs text-[#4A6741]/60">
+                        <span className="text-xs text-[#4A6741]/60 font-number font-medium">
                           {item.id}
                         </span>
-                        <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                        <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] pt-1 group-hover:text-[#4A6741] transition-colors">
                           {item.title}
                         </h3>
                       </div>
@@ -192,7 +192,6 @@ export default function Expertise() {
                   </div>
                 </motion.button>
               </motion.div>
-          
         </div>
       </section>
 

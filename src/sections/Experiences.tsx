@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Experience } from '../types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const experiences: Experience[] = [
   {
@@ -10,9 +10,10 @@ const experiences: Experience[] = [
     current: true,
     tags: ["Product Management", "Market Research", "Data Analysis"],
     achievements: [
-      "Launched 3 major features increasing user engagement by 45%",
-      "Led a team of 8 designers and developers",
-      "Implemented agile methodologies improving delivery time by 30%"
+      "Identified and prioritized product initiatives through collaboration with business stakeholders, resulting in a 20% increase in client revenue.",
+      "Developed and managed a product backlog, ensuring alignment with business objectives and delivering high-value features on time.",
+      "Conducted market research and data analysis to inform product decisions, improving client acquisition rates by 25%.",
+      "Presented actionable insights and product roadmaps to cross-functional teams, accelerating decision-making processes by 30%.",
     ]
   },
   {
@@ -22,9 +23,10 @@ const experiences: Experience[] = [
     current: true,
     tags: ["Entrepreneurship", "Interior Design", "Product Marketing"],
     achievements: [
-      "Grew monthly active users by 200%",
-      "Reduced churn rate by 25%",
-      "Successfully launched mobile app with 4.8 star rating"
+      "Managed end-to-end product lifecycle for bespoke interior design solutions, delivering projects with a 20% reduction in lead times",
+      "Led data-driven marketing campaigns, increasing brand visibility by 30% and driving a 25% rise in repeat business",
+      "Spearheaded customer-centric product enhancements, resulting in a 25% improvement in client satisfaction",
+      "Optimized internal workflows using project management tools, enhancing cross-functional collaboration and resource allocation"
     ]
   },
   {
@@ -34,9 +36,10 @@ const experiences: Experience[] = [
     current: false,
     tags: ["Stakeholder Management", "Collaborative Leadership"],
     achievements: [
-      "Increased customer satisfaction score from 7.5 to 9.2",
-      "Implemented user feedback loop reducing bug reports by 40%",
-      "Collaborated with 5 cross-functional teams"
+      "Collaborated with stakeholders to define product requirements, creating user stories and acceptance criteria that reduced time-to-market by 15%",
+      "Conducted A/B testing and analyzed product performance, contributing to $2M in additional revenue",
+      "Designed product roadmaps that aligned with strategic goals, improving feature delivery rates by 25%",
+      "Partnered with engineering and UX teams to ensure seamless implementation of new features, enhancing user experience"
     ]
   },
   {
@@ -46,9 +49,10 @@ const experiences: Experience[] = [
     current: false,
     tags: ["Competitive Analysis", "Lead Generation", "GTM Strategy"],
     achievements: [
-      "Increased customer satisfaction score from 7.5 to 9.2",
-      "Implemented user feedback loop reducing bug reports by 40%",
-      "Collaborated with 5 cross-functional teams"
+      "Conducted user research and competitive analysis to inform product development, driving a 25% increase in client acquisition",
+      "Developed go-to-market strategies for luxury design services, resulting in a 30% boost in brand visibility",
+      "Improved product positioning through targeted marketing efforts, securing $300K+ in project contracts",
+      "Analyzed customer feedback to optimize offerings, enhancing adoption rates and increasing referrals by 15%"
     ]
   },
   {
@@ -58,15 +62,32 @@ const experiences: Experience[] = [
     current: false,
     tags: ["Product Marketing", "Digital Marketing"],
     achievements: [
-      "Increased customer satisfaction score from 7.5 to 9.2",
-      "Implemented user feedback loop reducing bug reports by 40%",
-      "Collaborated with 5 cross-functional teams"
+      "Supported the development and launch of a social networking app, achieving a 30% increase in user sign-ups within the first three months",
+      "Executed data-driven marketing campaigns, increasing active user engagement by 40% and facilitating over 300 user connections",
+      "Conducted user behavior analysis, improving retention rates by 25% through targeted in-app features"
     ]
   }
 ];
 
 export default function Experiences() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [marginSize, setMarginSize] = useState(getMarginSize());
+
+  function getMarginSize() {
+    if (typeof window === 'undefined') return 385; // Default for SSR
+    if (window.innerWidth < 768) return 490;  // mobile
+    if (window.innerWidth < 1024) return 365; // tablet
+    return 285; // desktop
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setMarginSize(getMarginSize());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleDetails = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -90,7 +111,7 @@ export default function Experiences() {
               className={`relative border-b border-[#4A6741]/20 last:border-b-0 bg-white transition-all duration-300
                 ${expandedIndex === index ? 'shadow-xl' : 'hover:shadow-xl'}`}
               style={{
-                marginBottom: expandedIndex === index ? '320px' : '0px'
+                marginBottom: expandedIndex === index ? `${marginSize}px` : '0px'
               }}
             >
               <motion.div
@@ -107,14 +128,13 @@ export default function Experiences() {
                     onClick={() => toggleDetails(index)}
                   >
                     <div className="flex items-center space-x-4 cursor-pointer">
-                      <span className="text-xs md:text-md lg:text-md text-[#4A6741]/60 font-regular cursor-pointer">0{index + 1}</span>
+                      <span className="text-xs md:text-md lg:text-md text-[#4A6741]/60 font-number font-medium cursor-pointer">0{index + 1}</span>
                       <h3 className="text-sm md:text-lg lg:text-2xl font-light text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors cursor-pointer">
                         {exp.company}
                       </h3>
                     </div>
                     <div className="flex items-center space-x-8">
                       <div className="hidden md:flex lg:flex space-x-4">
-                        {/* Add your expertise tags here */}
                         {exp.tags.map((tag, index) => (
                           <span key={index} className="font-regular text-xs md:text-xs lg:text-md text-[#4A6741]/80 cursor-pointer">
                             {tag}
@@ -149,28 +169,39 @@ export default function Experiences() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 right-0 bg-white z-10 rounded-b-xl shadow-xl"
                     >
-                      <div className="p-6 pl-12 space-y-4">
+                      <div className="p-2 pb-6 pl-12 space-y-4">
                         <div>
-                          <span className="text-sm text-[#4A6741] font-light">Role</span>
-                          <p className="text-[#2D3A2A] mt-1">{exp.role}</p>
+                          <span className="text-md text-[#4A6741] font-light">Role: </span>
+                          <span className="text-[#2D3A2A] text-sm font-regular mt-1">{exp.role}</span>
                         </div>
                         <div>
-                          <span className="text-sm text-[#4A6741] font-light">Period</span>
-                          <p className="text-[#2D3A2A] mt-1">{exp.period}</p>
+                          <span className="text-md text-[#4A6741] font-light">Period: </span>
+                          <span className="text-[#2D3A2A] text-sm font-regular mt-1">
+                            {exp.period.split(/(\d+)/).map((part, index) => (
+                              part.match(/\d+/) ? 
+                              <span key={index} className="font-number font-medium">{part}</span> : 
+                              <span key={index}>{part}</span>
+                            ))}
+                          </span>
                         </div>
                         <div>
-                          <span className="text-sm text-[#4A6741] font-light">Achievements</span>
-                          <ul className="mt-2 space-y-2">
+                          <span className="text-md text-[#4A6741] font-light">Achievements: </span>
+                          <ul className="mt-4 space-y-3">
                             {exp.achievements.map((achievement, i) => (
-                              <li key={i} className="text-[#2D3A2A] flex items-start">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] mt-2 mr-2 flex-shrink-0" />
-                                {achievement}
+                              <li key={i} className="text-[#2D3A2A] font-regular text-sm flex items-start">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] mt-1 mr-2 flex-shrink-0" />
+                                <span className="achievement-text">
+                                  {achievement.split(/(\d+%?)/).map((part, index) => (
+                                    part.match(/\d+%?/) ? 
+                                    <span key={index} className="font-number font-medium">{part}</span> : 
+                                    <span key={index}>{part}</span>
+                                  ))}
+                                </span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       </div>
-                      <div className="flex justify-end"></div>
                     </motion.div>
                   )}
                 </AnimatePresence>

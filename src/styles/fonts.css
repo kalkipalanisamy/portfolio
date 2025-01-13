@@ -1,3 +1,6 @@
+/* Import Montserrat for numbers */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @font-face {
   font-family: 'Kugile';
   src: url('/fonts/kugile.ttf') format('truetype');
@@ -13,6 +16,13 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* Add a utility class for number styling */
+.font-number {
+  font-family: 'Montserrat', sans-serif;
+  font-feature-settings: "tnum" on, "lnum" on;
+  letter-spacing: -0.02em;
 }
 
 /* Add more @font-face declarations for other weights/styles */ 

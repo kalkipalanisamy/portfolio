@@ -1,10 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import work1 from '../assets/work/1.jpg'
+import work2 from '../assets/work/2.jpg'
+import work3 from '../assets/work/3.jpg'
 
 const images = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop",
+  work1,
+  work2,
+  work3,
 ];
 
 export default function Work() {
