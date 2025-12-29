@@ -13,9 +13,10 @@ export default {
         accent: '#2E7D32',
       },
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-        heading: ['Kugile', 'serif'],
+        sans: ['Nunito', 'sans-serif'],
+        heading: ['Nunito', 'sans-serif'],
         logo: ['Signatie', 'sans-serif'],
+        number: ['Montserrat', 'sans-serif'],
       },
     },
   },

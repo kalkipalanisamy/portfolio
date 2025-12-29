@@ -17,7 +17,7 @@
 body {
   background: var(--background);
   cursor: none;
-  font-family: 'CustomFont', 'Playfair Display', serif;
+  /* font-family: 'CustomFont', 'Playfair Display', serif; */
 }
 
 .cursor-none {
@@ -71,18 +71,18 @@ html, body {
 
 /* You can also create utility classes for specific font weights */
 .font-thin {
-  font-family: 'Kugile', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 200;
 }
 
 .font-light {
-  font-family: 'Kugile', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 300;
 }
 
 .font-regular {
-  font-family: 'Kugile', sans-serif;
-  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
 }
 
 .font-logo {

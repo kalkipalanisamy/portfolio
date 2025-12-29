@@ -10,29 +10,30 @@ export default function About() {
       <div className="max-w-7xl mx-auto w-full">
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 md:space-y-8 pt-2 md:pt-16 lg:pt-0">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#2D3A2A]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#2D3A2A]">
               Hello!
             </h2>
-            <p className="text-[11px] md:text-[16px] lg:text-sm font-regular text-[#4A6741] leading-6 md:leading-10 lg:leading-8 text-justify">
-              I’m Kalki, a product management professional with a passion for
-              solving complex problems and delivering meaningful results. My
-              career spans from running a luxury interior design business—where
-              I wore every hat imaginable—to managing cross-functional teams in
-              tech and crafting strategies that drive impact.
+            <p className="text-[13px] md:text-[16px] lg:text-[15px] font-regular text-[#4A6741] leading-6 md:leading-10 lg:leading-8 text-justify">
+              I like being the person who brings clarity and calm when projects get complex.
+              <br />
+              <br />
+              I’m Kalki, a project management professional who helps teams move from ambiguity 
+              to execution. I work best on projects that start with big goals and unclear paths, 
+              where progress depends on asking the right questions, setting direction, 
+              and keeping momentum steady.
               <br />
               <br className="md:hidden lg:block"/>
-              With an MBA in business analytics and a foundation in design, I
-              bring a unique mix of strategy, empathy, analytical thinking, and
-              entrepreneurial grit to the table. Whether scaling a business
-              during the pandemic or leading innovative projects, I’ve learned
-              how to adapt, lead, and deliver, no matter the challenge.
+              My work sits at the intersection of planning, delivery, and people. With an MBA in 
+              Information Systems and a strong analytical foundation, I focus on building clear 
+              plans, managing risk early, and creating visibility so teams can make better 
+              decisions and move forward with confidence.
               <br />
-              <br className="md:hidden lg:block"/>
-              If there’s one thing I excel at, it’s turning vision into
-              action—and doing it with purpose.
+              <br className="lg:block"/>
+              At my core, I’m someone who follows through. I care about doing the work well, 
+              leading with intention, and turning ideas into results that actually last.
             </p>
           </div>
-          <div className="relative h-[250px] md:h-[500px] lg:h-[500px]">
+          <div className="relative h-[250px] md:h-[450px] lg:h-[500px]">
             <img
               src={Kalki}
               alt="Kalki Palanisamy"

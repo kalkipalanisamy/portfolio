@@ -207,7 +207,7 @@ export default function Header({
               isMenuOpen ? "text-white" : "text-[#2D3A2A]"
             } transition-colors duration-300`}
           >
-            {["About", "Experience", "Work", "Expertise", "Contact"].map(
+            {["About", "Experience", "Expertise", "Contact"].map(
               (item) => (
                 <a
                   key={item}
@@ -245,7 +245,7 @@ export default function Header({
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-[#4A6741] z-50 flex flex-col items-center justify-center gap-12 md:gap-20 pt-8"
           >
-            {["About", "Experience", "Work", "Expertise", "Contact"].map(
+            {["About", "Experience", "Expertise", "Contact"].map(
               (item, i) => (
                 <motion.div
                   key={item}

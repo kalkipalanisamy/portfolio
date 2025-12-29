@@ -22,16 +22,16 @@ interface ListItem {
 }
 
 const expertise: ListItem[] = [
-  { id: "01", title: "Product Strategy" },
-  { id: "02", title: "Roadmap Development" },
-  { id: "03", title: "Go-To-Market Strategy" },
-  { id: "04", title: "Stakeholder Management" },
-  { id: "05", title: "Data Analysis" },
-  { id: "06", title: "Market Analysis" },
-  { id: "07", title: "Cross-Functional Team Leadership" },
-  { id: "08", title: "User-Centric Design" },
-  { id: "09", title: "A/B Testing" },
-  { id: "10", title: "Agile Methodologies" }
+  { id: "01", title: "Agile Methodologies" },
+  { id: "02", title: "Project Controls and Governance" },
+  { id: "03", title: "Contingency Planning" },
+  { id: "04", title: "Risk Mitigation" },
+  { id: "05", title: "Root Cause Analysis" },
+  { id: "06", title: "Cross-Functional Team Leadership" },
+  { id: "07", title: "Stakeholder Communication" },
+  { id: "08", title: "Workflow Optimization" },
+  { id: "09", title: "Financial and Resource Management" },
+  { id: "10", title: "Market Analysis" },
 ];
 
 const tools: ListItem[] = [
@@ -75,7 +75,7 @@ export default function Expertise() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
+              <h2 className="text-2xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
                 Expertise
               </h2>
               <hr className="border-[#4A6741]/20 mb-8"/>
@@ -88,7 +88,7 @@ export default function Expertise() {
                   >
                     <div className="flex items-center space-x-4">
                       <span className="text-xs text-[#4A6741]/60 font-number font-medium">{item.id}</span>
-                      <h3 className="text-md md:text-sm lg:text-md pt-1 font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                      <h3 className="text-sm md:text-sm lg:text-[16px] pt-1 font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -104,7 +104,7 @@ export default function Expertise() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h2 className="text-xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
+              <h2 className="text-2xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
                 Tools
               </h2>
               <hr className="border-[#4A6741]/20 mb-8"/>
@@ -123,7 +123,7 @@ export default function Expertise() {
                           className="w-6 h-6"
                         />
                       )}
-                      <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
+                      <h3 className="text-sm md:text-sm lg:text-[16px] font-regular text-[#2D3A2A] group-hover:text-[#4A6741] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -139,7 +139,7 @@ export default function Expertise() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h2 className="text-xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
+              <h2 className="text-2xl font-light mb-2 text-[#2D3A2A] flex items-center justify-center">
                 Interests
               </h2>
               <hr className="border-[#4A6741]/20 mb-8"/>
@@ -155,7 +155,7 @@ export default function Expertise() {
                         <span className="text-xs text-[#4A6741]/60 font-number font-medium">
                           {item.id}
                         </span>
-                        <h3 className="text-sm md:text-sm lg:text-md font-regular text-[#2D3A2A] pt-1 group-hover:text-[#4A6741] transition-colors">
+                        <h3 className="text-sm md:text-sm lg:text-[16px] font-regular text-[#2D3A2A] pt-1 group-hover:text-[#4A6741] transition-colors">
                           {item.title}
                         </h3>
                       </div>
@@ -177,18 +177,13 @@ export default function Expertise() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="flex items-center space-x-1 text-[#4A6741] group-hover:text-white transition-colors cursor-pointer">
-                    <span className="font-regular text-sm pt-2 cursor-pointer">VIEW RESUME</span>
-                    <svg 
-                      className="w-6 h-6 mt-1 transform group-hover:translate-x-1 transition-transform cursor-pointer" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="1.5"
-                      style={{ transform: 'rotate(-45deg)' }}
-                    >
-                      <path d="M5 12h17M15 5l7 7-7 7" />
-                    </svg>
+                  <div className="flex items-center space-x-1 mb-1 text-[#4A6741] group-hover:text-white transition-colors cursor-pointer">
+                    <span className="font-regular text-md pt-2 cursor-pointer">VIEW RESUME</span>
+                    <div className="w-8 h-6 mt-1">
+                      <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                 </motion.button>
               </motion.div>

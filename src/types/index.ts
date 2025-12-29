@@ -12,4 +12,5 @@ export interface Project {
     current: boolean;
     tags: string[];
     achievements: string[];
+    link?: string;
   }

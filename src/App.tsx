@@ -57,7 +57,7 @@ export default function App() {
       <main className="relative overflow-x-hidden">
         <About />
         <Experiences />
-        <Work />
+        {/* <Work /> */}
         <Expertise />
         <Contact />
       </main>

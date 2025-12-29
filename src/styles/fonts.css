@@ -1,13 +1,8 @@
+/* Import Nunito for main text */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 /* Import Montserrat for numbers */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-@font-face {
-  font-family: 'Kugile';
-  src: url('/fonts/kugile.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* If you have different weights, add them like this */
 @font-face {
