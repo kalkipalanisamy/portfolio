@@ -5,7 +5,6 @@ import Header from './components/Header';
 import LoadingScreen from './components/LoadingScreen';
 import About from './sections/About';
 import Experiences from './sections/Experiences';
-import Work from './sections/Work';
 import Expertise from './sections/Expertise';
 import Contact from './sections/Contact';
 
@@ -57,7 +56,6 @@ export default function App() {
       <main className="relative overflow-x-hidden">
         <About />
         <Experiences />
-        {/* <Work /> */}
         <Expertise />
         <Contact />
       </main>
